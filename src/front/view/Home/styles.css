@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(251, 255, 0, 0.178);
+  }
+  
+  .borda {
+    border-bottom: solid 1px rgba(0, 0, 0, 0.295);
+  }
+  
+  .card-body i {
+    color: #343a40; /* Cor do ícone */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  

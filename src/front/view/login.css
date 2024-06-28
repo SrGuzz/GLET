@@ -1,0 +1,54 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(251, 255, 0, 0.178);
+}
+
+.cor{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(27, 58, 66);
+}
+
+input{
+    width: 250px;
+    height: 40px;
+    background-color: #ffffff00;
+}
+
+input:focus{
+    outline: none;
+}
+
+img{
+    width: 20%;
+}
+
+.login{
+    background-color: rgb(27, 58, 66); /* Cor de fundo do botão */
+    border: solid 2px; /* Remove a borda padrão */
+    border-color: rgba(251, 255, 0, 0);
+    color: rgb(231, 231, 190); /* Cor do texto */
+    padding: 8px 32px; /* Espaçamento interno (topo/baixo, esquerda/direita) */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Remove a decoração do texto */
+    display: inline-block; /* Exibe como bloco */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 2px; /* Margem externa (topo/baixo, esquerda/direita) */
+    cursor: pointer; /* Cursor ao passar por cima */
+    border-radius: 20px; /* Define o raio dos cantos */
+}
+
+#loading{
+    display: none;
+}
+
+.erroSenha{
+    display: none;
+    color: red;
+}
+
+p{
+    font-size: 13px;
+}

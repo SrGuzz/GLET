@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Servicos</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mooli&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="servico.css">
+
+        <!--Select Multiple style-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/css/multi-select-tag.css">
+    </head>
+
+    <body>
+      <main>
+        <div class="container">
+          <div class="row d-flex  align-items-center pt-3 pb-2 borda">
+            <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-between">
+              <a href="/src/front/view/Home/home.html" class="d-flex align-items-center justify-content-end text-dark text-decoration-none"><h3>GLET</h3><h2><i class="bi bi-truck ps-2"></i></h2></a>
+            </div>
+
+            <div class="col-12 col-sm-6 d-flex justify-content-center justify-content-md-end">
+              <div class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+              <a class="me-3 py-2 text-dark text-decoration-none" href="/src/front/view/Fornecedores/fornecedores.html"><span><b>Funcionarios</b></span></a>
+              <p class="me-3 mt-2 text-dark">|</p>
+              <a class="me-3 py-2 text-dark text-decoration-none" href="/src/front/view/Veiculos/veiculos.html"><span><b>Veiculos</b></span></a>
+              <p class="me-3 mt-2 text-dark">|</p>
+              <a class="me-3 py-2 text-dark text-decoration-none" href="/src/front/view/Fornecedores/fornecedores.html"><span><b>Fornecedores</b></span></a>
+              </div>
+            </div>
+          </div>
+            
+          
+
+          <div class="d-flex row align-items-center pt-3 pb-3">
+            <div class="col-md-2 col-sm-6 col-12 ps-2 mb-3 mb-md-0 ps-3">
+              <!-- Botao Adicionar Servico -->
+              <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#adicionarModal" id="adicionarServ">
+                Adicionar
+              </button>
+              
+            </div>
+            <div class="col-md-2 col-sm-6 col-12 ps-2 mb-3 mb-md-0 ps-3">
+              <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#prazo" onclick="exibeMetrica()">
+                Indicadores
+              </button>
+            </div>
+            
+            <div class="modal" tabindex="-1" id="prazo">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Percentual de Entrgas no Prazo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body" id="indicador">
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-8 d-flex justify-content-center justify-content-md-end">
+                <div class="search-container">
+                  <input class="" type="search" placeholder="Buscar por número de serviço" aria-label="Search" id="buscar">
+                  <button class="" type="submit" id="procurar"><i class="bi bi-search"></i></button>
+                </div>
+            </div>
+          </div>
+        </div>
+          
+        <div class="d-none justify-content-center" id="loading">
+          <div class="spinner-border" role="status" >
+              <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <div  class="container pt-3">
+          <div class="row" id="cards">
+            <!-- Cards de serviços -->
+          </div>
+        </div>
+
+        <!--Modal-->
+        <div class="modal fade" id="adicionarModal" tabindex="-1" aria-labelledby="adicionarModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="adicionarModalLabel">Insira as Informações</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body" id="dadosAdicionar">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+          <!-- place footer here -->
+          
+        
+      </footer>
+      
+      <script>
+        $(document).ready(function(){
+            $('#agendamento').mask('00/00/0000');
+        });
+      </script>
+      
+      <!-- Bootstrap JavaScript Libraries -->
+      <script
+          src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+          integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+          crossorigin="anonymous"
+      ></script>
+
+      <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+          integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+          crossorigin="anonymous"
+      ></script>
+
+      <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@3.0.1/dist/js/multi-select-tag.js"></script>
+
+      <script src="servico.js"></script>
+    </body>
+</html>

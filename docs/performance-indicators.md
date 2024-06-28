@@ -1,0 +1,9 @@
+## 5. Indicadores de desempenho
+
+| **Indicador** | **Objetivos** | **Descrição** | **Fonte de dados** | **Fórmula de cálculo** |
+| ---           | ---           | ---           | ---             | ---             |
+| Média de manutenções corretivas por veículo por ano | Identificar um veículo com problemas recorrentes, a fim de avaliar se uma substituição ou manutenção mais aprofundada será feita | Número de manutenções do tipo corretiva para certo veículo em determinado ano | Tabela manutenções | número total de manutenções corretivas de um veículo / período de tempo (anos) |
+| Tamanho da Empresa | Observar o tamaho da empresa seguindo índice do SEBRAE | Observar a relação de Funcionários por empresa, buscando avaliar o tamanho da empresa. | Tabela Funcionários | Número total de Funcionários/ CNPJ - Até 9 Funcionarios = Micro Empresa / 9 a 19 = Empresa de Pequeno Porte / 20 a 99 = Empresa de Médio Porte / 100 ou mais = Empresa de Grande Porte |
+| Custo médio dos materiais por fornecedor | Monitorar o custo médio dos materiais fornecidos por cada fornecedor | Média dos custos dos materiais fornecidos por cada fornecedor | Tabela Materiais, Tabela Fornecedores | Soma dos custos dos materiais de um fornecedor / Número total de materiais fornecidos pelo mesmo fornecedor |
+| Taxa de Entregas no Prazo | Medir a eficiência operacional da empresa de logística no cumprimento dos prazos de entrega acordados com os clientes, visando aumentar a satisfação do cliente e identificar áreas de melhoria nos processos logísticos. | Este indicador representa o percentual de entregas realizadas dentro do prazo estipulado. Ele reflete diretamente na confiabilidade e na qualidade do serviço prestado, permitindo avaliar o desempenho da empresa em atender às expectativas dos clientes quanto aos tempos de entrega. | Tabela de Serviços | (Número de entregas no prazo / Número total de entregas) * 100 |
+
